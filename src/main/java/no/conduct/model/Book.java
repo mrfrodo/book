@@ -17,6 +17,8 @@ public class Book implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
+
+
     private String title;
     private Date created;
 
@@ -26,6 +28,12 @@ public class Book implements Serializable {
     public Long getId() {
         return id;
     }
+
+    @Column(name = "title")
+    public String getTitle() {
+        return title;
+    }
+
 
     @Column(name = "firstname")
     public String getFirstName() {
@@ -44,6 +52,11 @@ public class Book implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public void setFirstName(String firstName) {
