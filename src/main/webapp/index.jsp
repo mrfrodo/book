@@ -19,8 +19,8 @@
 </s:form>
  
  
-<h2>Contacts</h2>
-<table>
+<h2>Bøker</h2>
+<table border="1">
 <tr>
     <th>Tittel</th>
     <th>Etternavn</th>
