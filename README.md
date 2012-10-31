@@ -26,4 +26,5 @@ CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
 use book_db
 GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' WITH GRANT OPTION;
 
+se på grants med
 SHOW GRANTS FOR 'frode'@'localhost';
