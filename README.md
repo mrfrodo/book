@@ -22,9 +22,12 @@ module.xml:
 
 3) Last ned mysql og lag databasen book_db, brukeren <username> og gi den grants
 create database BOOK_DB
-CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
+
 use book_db
-GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' WITH GRANT OPTION;
+
+CREATE USER '<username>'@'localhost' IDENTIFIED BY '<password>';
+
+GRANT ALL PRIVILEGES ON *.* TO '<username>'@'localhost' WITH GRANT OPTION;
 
 se på grants med
 SHOW GRANTS FOR 'frode'@'localhost';

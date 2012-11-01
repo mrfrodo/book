@@ -11,8 +11,8 @@
  
 <s:form action="add" method="post">
     <s:textfield name="book.title" label="Tittel"/>
-    <s:textfield name="book.firstName" label="Etternavn"/>
-    <s:textfield name="book.lastName" label="Fornavn"/>
+    <s:textfield name="book.firstName" label="Forfatter Etternavn"/>
+    <s:textfield name="book.lastName" label="Forfatter Fornavn"/>
     <s:textfield name="book.created" label="Lagt til"/>
 
     <s:submit value="Legg til bok" align="center"/>
