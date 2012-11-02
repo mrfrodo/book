@@ -1,4 +1,4 @@
-package no.conduct.model;
+package no.conduct.domain;
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -17,10 +17,8 @@ public class Book implements Serializable {
     private Long id;
     private String firstName;
     private String lastName;
-
-
     private String title;
-    private Date created;
+    private String created;
 
     @Id
     @GeneratedValue
@@ -46,14 +44,13 @@ public class Book implements Serializable {
     }
 
     @Column(name = "created")
-    public Date getCreated() {
+    public String getCreated() {
         return created;
     }
 
     public void setId(Long id) {
         this.id = id;
     }
-
 
     public void setTitle(String title) {
         this.title = title;
@@ -67,7 +64,7 @@ public class Book implements Serializable {
         this.lastName = lastName;
     }
 
-    public void setCreated(Date created) {
+    public void setCreated(String created) {
         this.created = created;
     }
 

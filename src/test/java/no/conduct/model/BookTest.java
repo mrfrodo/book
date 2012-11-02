@@ -1,6 +1,7 @@
 
 package no.conduct.model;
 
+import no.conduct.domain.Book;
 import org.junit.Assert;
 import org.junit.Test;
 

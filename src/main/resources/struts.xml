@@ -2,22 +2,23 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+
+
     <constant name="struts.devMode" value="false" />
 
-    <package name="default" extends="struts-default" namespace="/">
+    <package name="default" extends="struts-default" >
 
-        <action name="add" class="no.conduct.BookAction" method="add">
-            <result name="success" type="chain">index</result>
-            <result name="input" type="chain">index</result>
+
+
+      <action name="add" class="no.conduct.web.BookAction" method="add">
+            <result name="success" type="redirect">listBooks</result>
+            <result name="input" type="redirect">listBooks</result>
         </action>
 
-        <action name="delete" class="no.conduct.BookAction" method="delete">
-            <result name="success" type="chain">index</result>
+        <action name="listBooks" class="no.conduct.web.BookAction" method="list" >
+            <result name="success">bok.jsp</result>
         </action>
 
-        <action name="index" class="no.conduct.BookAction">
-            <result name="success">index.jsp</result>
-        </action>
     </package>
+
 </struts>
