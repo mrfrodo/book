@@ -14,6 +14,7 @@ import java.util.List;
 
 public class BookAction extends ActionSupport {
 
+    private Long id;
     private static final long serialVersionUID = 9149826260758390091L;
     private Book book;
     private List<Book> bookList = new ArrayList<Book>();
@@ -22,12 +23,14 @@ public class BookAction extends ActionSupport {
     private BookDAO bookDAO;
 
     public String execute() {
-        System.out.println("** BookAction execute");
 
         return SUCCESS;
     }
 
     public String add() {
+
+        if (book.getTitle().isEmpty())
+            return INPUT;
 
         bookDAO.add(book);
 
@@ -37,14 +40,16 @@ public class BookAction extends ActionSupport {
     public String list() {
         System.out.println("** list");
 
-
         this.bookList = bookDAO.listAll();
 
         return SUCCESS;
     }
 
     public String delete() {
-        bookDAO.deleteBookById(book.getId());
+        System.out.println("***  DELETE !!");
+        System.out.println(" ** deleting book "+ book);
+        System.out.println(" ** deleting book id "+ getId());
+        bookDAO.deleteBookById(getId());
         return SUCCESS;
     }
 
@@ -64,6 +69,14 @@ public class BookAction extends ActionSupport {
 
     public void setBookList(List<Book> booksList) {
         this.bookList = booksList;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
 }

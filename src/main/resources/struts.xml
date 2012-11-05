@@ -15,9 +15,16 @@
             <result name="input" type="redirect">listBooks</result>
         </action>
 
+        <action name="delete" class="no.conduct.web.BookAction" method="delete" >
+            <result name="success" type="redirect">listBooks</result>
+            <result name="input" type="redirect">listBooks</result>
+        </action>
+
         <action name="listBooks" class="no.conduct.web.BookAction" method="list" >
             <result name="success">bok.jsp</result>
         </action>
+
+
 
     </package>
 

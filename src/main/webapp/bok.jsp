@@ -3,6 +3,14 @@
 <html>
 <head>
     <title>bøker</title>
+
+    <style>
+    		th {
+    			height: 40px;
+    			background-color: #ffee55;
+    		}
+    	</style>
+
 </head>
 <body>
  
@@ -11,7 +19,7 @@
  
 <s:form action="add">
 
-     <s:hidden name="id" />
+
      <s:textfield name="book.title" label="Tittel"/>
      <s:textfield name="book.firstName" label="Forfatter Etternavn"/>
      <s:textfield name="book.lastName" label="Forfatter Fornavn"/>
