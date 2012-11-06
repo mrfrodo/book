@@ -11,8 +11,13 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class BookAction extends ActionSupport {
+
+    @Inject
+    private Logger log;
 
     private Long id;
     private static final long serialVersionUID = 9149826260758390091L;
@@ -29,6 +34,9 @@ public class BookAction extends ActionSupport {
 
     public String add() {
 
+
+        log.info("BookAction add");
+
         if (book.getTitle().isEmpty())
             return INPUT;
 
@@ -38,7 +46,6 @@ public class BookAction extends ActionSupport {
     }
 
     public String list() {
-        System.out.println("** list");
 
         this.bookList = bookDAO.listAll();
 
@@ -46,9 +53,7 @@ public class BookAction extends ActionSupport {
     }
 
     public String delete() {
-        System.out.println("***  DELETE !!");
-        System.out.println(" ** deleting book "+ book);
-        System.out.println(" ** deleting book id "+ getId());
+        log.info("delete");
         bookDAO.deleteBookById(getId());
         return SUCCESS;
     }

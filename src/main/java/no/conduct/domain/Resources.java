@@ -6,6 +6,7 @@ import javax.enterprise.inject.spi.InjectionPoint;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Resources {
@@ -19,7 +20,10 @@ public class Resources {
     @Produces
     Logger getLogger(InjectionPoint ip) {
         String category = ip.getMember().getDeclaringClass().getName();
-        System.out.println(" ******** getLogger = " +category);
+
+        Logger l  = Logger.getLogger(category);
+        l.setLevel(Level.INFO);
+
         return Logger.getLogger(category);
     }
 

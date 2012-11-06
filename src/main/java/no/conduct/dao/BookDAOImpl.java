@@ -33,10 +33,6 @@ public class BookDAOImpl implements BookDAO {
 
     @Override
     public void add(Book book) {
-        System.out.println("** BookDAOImpl before persist ");
-
-        System.out.println("** BookDAOImpl add book.id = " +book.getId());
-        System.out.println("** BookDAOImpl add book.title = " +book.getTitle());
 
         //Session session = (Session) em.getDelegate();
 
@@ -49,9 +45,7 @@ public class BookDAOImpl implements BookDAO {
 
             userTransaction.commit();
 
-            System.out.println("** BookDAOImpl after persist ");
-            System.out.println("** BookDAOImpl add book.id = " +book.getId());
-            System.out.println("** BookDAOImpl add book.title = " +book.getTitle());
+
 
         }  catch (RollbackException e) {
             // We tried to commit the transaction but it has already been rolled back (adding duplicate keys would
@@ -102,8 +96,6 @@ public class BookDAOImpl implements BookDAO {
         cb.addOrder(Order.asc("title"));
 
         List<Book> list = cb.list();
-
-        System.out.println("** BookDAOImpl listAll list size= " + list.size());
 
         return (List<Book>) list;
 
