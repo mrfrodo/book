@@ -95,6 +95,19 @@
 
     <profiles>
         <profile>
+
+           <id>h2</id>
+
+            <properties>
+                <book.datasource>java:jboss/datasources/h2DS</book.datasource>
+                <book.hbm2ddl>create-drop</book.hbm2ddl>
+                <book.dialect>org.hibernate.dialect.MySQLDialect</book.dialect>
+
+            </properties>
+
+        </profile>
+
+        <profile>
             <!-- When built in OpenShift the 'openshift' profile will be used when invoking mvn. -->
             <!-- Use this profile for any OpenShift specific customization your app will need. -->
             <!-- By default that is to put the resulting archive into the 'deployments' folder. -->

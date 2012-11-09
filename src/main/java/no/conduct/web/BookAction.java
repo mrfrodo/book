@@ -35,7 +35,7 @@ public class BookAction extends ActionSupport {
     public String add() {
 
 
-        log.info("BookAction add");
+        log.info("BookAction add..");
 
         if (book.getTitle().isEmpty())
             return INPUT;
