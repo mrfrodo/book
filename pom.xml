@@ -9,10 +9,13 @@
     <packaging>war</packaging>
     <name>Conduct Books</name>
 
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <book.datasource>java:jboss/datasources/MysqlBookDS</book.datasource>
+        <book.dialect>org.hibernate.dialect.MySQLDialect</book.dialect>
+        <book.hbm2ddl>create</book.hbm2ddl>
     </properties>
-
 
     <dependencies>
 
@@ -69,6 +72,14 @@
 
     <build>
 
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+
         <finalName>bookdb</finalName>
 
         <plugins>
@@ -89,6 +100,14 @@
             <!-- By default that is to put the resulting archive into the 'deployments' folder. -->
             <!-- http://maven.apache.org/guides/mini/guide-building-for-different-environments.html -->
             <id>openshift</id>
+
+            <properties>
+                <book.datasource>java:jboss/datasources/MysqlDS</book.datasource>
+                <book.dialect>org.hibernate.dialect.MySQLDialect</book.dialect>
+                <book.hbm2ddl>create</book.hbm2ddl>
+            </properties>
+
+
             <build>
                 <plugins>
 
