@@ -7,10 +7,11 @@
         <jta-data-source>${book.datasource}</jta-data-source>
 
         <properties>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.hbm2ddl.auto" value="${book.hbm2ddl}"/>
             <property name="hibernate.show_sql" value="false"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.dialect" value="${book.dialect}"/>
         </properties>
 
     </persistence-unit>
+
 </persistence>
